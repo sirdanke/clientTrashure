@@ -4,19 +4,28 @@ import { View, Text, TouchableOpacity, Dimensions } from 'react-native'
 
 import Icon from "react-native-vector-icons/FontAwesome"
 import MaterialIcon from "react-native-vector-icons/MaterialCommunityIcons"
+import Geolocation from 'react-native-geolocation-service';
 
 
 
 export default class ExpoCameraScreen extends Component {
     state = {
+
+        hasLocationPermission: null,
         hasCameraPermission: null,
         type: Camera.Constants.Type.back,
-        flash : Camera.Constants.FlashMode.torch
+        flash: Camera.Constants.FlashMode.torch
 
     }
     async componentDidMount() {
         const { status } = await Permissions.askAsync(Permissions.CAMERA);
         this.setState({ hasCameraPermission: status === 'granted' });
+
+    }
+
+    async componentWillMount() {
+        const { status } = await Permissions.askAsync(Permissions.LOCATION);
+        this.setState({ hasLocationPermission: status === 'granted' });
     }
 
     async snapPhoto() {
@@ -27,11 +36,17 @@ export default class ExpoCameraScreen extends Component {
                 quality: 1, base64: true, fixOrientation: true,
                 exif: true
             };
-            await this.camera.takePictureAsync(options).then(photo => {
+            let photo = await this.camera.takePictureAsync(options).then(photo => {
                 photo.exif.Orientation = 1;
-                console.log('this is photo', photo, "=====");
-
+                
+                return photo
             });
+            let location = await Location.getCurrentPositionAsync({});
+
+            console.log(photo)
+            console.log(location)
+            
+
         }
     }
 
