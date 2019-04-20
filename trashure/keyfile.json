@@ -1,0 +1,12 @@
+{
+    "type": "service_account",
+    "project_id": "miniwp",
+    "private_key_id": "895cf32ed82fc14d6dfa898a1991911d8b559ce2",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCoYbv4w2MWL8a4\n+/ZCZugbAxcO1rj3cOfdG1p1Ar7luNdHWr58o8iyFdPXKq6GTLRyjHNaGyH8DsMG\n8NylRFUAxD1R2arZt9R9e/r2llzVZVQq4mX3cCXpk47IXyjYPzuwITBb8DqHyfCC\ndIdCftuAiAW8z8ONayy2pXELbU9zZ3bYdsTNpTqFo2dNZTeBpf1DncRnJ/BFZqYX\ngiM+BY58TT6COIdxu9NOyn68I3fdEWn0c+Ap4runUO5gNKrZcw6LYc4P6Tjxvog+\n/APeig/ltMzXA8wKZm5WPHFPayAixvbU+VWykoE/d93VJm0NOOmf/5El1tnDYURh\nh+lk1C9nAgMBAAECggEAAsK7dLwrWzlETlMfOf567rpxvdYKaVAqFQd2R7XYUGbj\n7LERr3R1/Wl7NCtoeh421Sv1VjRcrcfGLc50J6eDp0QQZ0+ky/YGH1qRhkp30i3b\nn+pfVpu5m2dGb4WT41vCDES3CMLbCs/mSBVGBHKVAbn5MhvL7n0j2gjDXjcYFuHE\nEyu5Iy6DamXzB0syT00iY94Pw6ZhW7ZhGc0vmvYOHEPGaYg3x/b6qLRcvZFHxQFc\nDXdf7/4kru3vZTVYdrZGnYZhWxRfXQcElKc5Jmc2st73Ggvswo/UoTd02yqHiI0i\nohKoEIXtkXKs3wbrd1ciAVdOO7ki/PkALcb7x3Fq4QKBgQDUxaWBiPPgDoLz4YgL\nLwCFovVcdZgw3YrIvoJuHeUlNE/yrhN5NbFxXQSpMbJPgsAlhoM6rSsUMivOnoEt\nLdoI3IJRSGsv1mdwG4rOTLEtQ9iVL04eYJFGwENoFiochLRT2lIxMhVF5Wj7M/Je\nzsAyrdWsgZ1YUwrjlYzk6nPphwKBgQDKl1UuFjKzPBKmWViP6XjebqMDlv3vv5j1\n9qb7QVMFvEhsCdbVucZVJ35AxSpvpAZxYZF9BCS7GI548nwtAkOIDbKbC+9WUuF9\n8x/GRtSxDlgdNN3eoITwD++6GGcWLogM1PC6rQs1EVVzUY7zJACN2p82tj5W4pTD\nfD9DRkWDIQKBgDkj2w6ueM/zFbfpGV/nf3xkBwCNlBGLbXn7r4ti++bB5baGiTRD\n9yM6l8XYUsqHkpKBTTy0xJzn3FvgtVAswCEhFt49VIvESIMS4nQEpJBDaCaoTZJa\n3KjjeTa6vRRrjwH135zWll/u/AJ6MNzFKVhy1q89H8RYiNQVlYDkdbyBAoGAVsZB\nNu9NIhZeCqCEXYfsPKH48uWuuQ1BEEFovn/5dqByCMyiF4NuHzU+T7Hj/lOsas4W\nygyHSxg2ljmO1Jx+nnz3fo+7ISd47EDB4GSgX4I8Xa4yRlRM/KJm1Tf0l7ywi4Z9\n4geSoFVfW3iYmS5XimsU/RNMWlzMyXqjgkZMKeECgYA5KWO8r+19PYULduWIuk2K\noyda4etWYr0SDMBvcZ8fOqC7RsCFpnCQx9O5IWzmQI0WjjNdRyHAQUtflRjPgMRt\nMpVGZDdaMHYx5Ta6jfqDQyF6Mmlo8uyqLZb7vB3eyFJaMLBvxQXwgKQGriN1w+uL\nbxha4Z/K6iNkzLl+urE5vg==\n-----END PRIVATE KEY-----\n",
+    "client_email": "miniwipi@miniwp.iam.gserviceaccount.com",
+    "client_id": "110861707300678307374",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/miniwipi%40miniwp.iam.gserviceaccount.com"
+  }

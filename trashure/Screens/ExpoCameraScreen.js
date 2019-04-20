@@ -7,8 +7,13 @@ import MaterialIcon from "react-native-vector-icons/MaterialCommunityIcons"
 import Geolocation from 'react-native-geolocation-service';
 
 
+import { connect } from 'react-redux'
 
-export default class ExpoCameraScreen extends Component {
+import { sendRawData } from '../Actions/Api'
+
+
+
+class ExpoCameraScreen extends Component {
     state = {
 
         hasLocationPermission: null,
@@ -30,6 +35,7 @@ export default class ExpoCameraScreen extends Component {
 
     async snapPhoto() {
         console.log('Button Pressed');
+        let obj ={}
         if (this.camera) {
             console.log('Taking photo');
             const options = {
@@ -38,14 +44,32 @@ export default class ExpoCameraScreen extends Component {
             };
             let photo = await this.camera.takePictureAsync(options).then(photo => {
                 photo.exif.Orientation = 1;
-                
+
                 return photo
             });
-            let location = await Location.getCurrentPositionAsync({});
+            // console.log(photo)
+            obj.base64 = photo.base64
 
-            console.log(photo)
-            console.log(location)
-            
+            Geolocation.getCurrentPosition(               
+                 (position) => {
+                    //  console.log(this.props.sendRawData(), "======");
+                     
+                    //  return position
+                     obj.longitude = position.coords.longitude
+                     obj.latitude = position.coords.latitude
+                     console.log(obj.latitude, "===");
+                     
+                    this.props.sendRawData(obj)
+                },
+                (error) => {
+                    // See error code charts below.
+                    console.log(error.code, error.message);
+                },
+                { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
+            );
+
+            // console.log(location)
+
 
         }
     }
@@ -139,3 +163,13 @@ export default class ExpoCameraScreen extends Component {
 
 
 const deviceWidth = Dimensions.get('window').width
+const mapStateToProps = (state) => ({
+    loading: state.Api.loading
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    sendRawData: (object) => dispatch(sendRawData(object))
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ExpoCameraScreen)
