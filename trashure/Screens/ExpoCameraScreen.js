@@ -9,7 +9,7 @@ import Geolocation from 'react-native-geolocation-service';
 
 import { connect } from 'react-redux'
 
-import { sendRawData } from '../Actions/Api'
+import { sendRawData } from '../store/Actions/Api'
 
 
 

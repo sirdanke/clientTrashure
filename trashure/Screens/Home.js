@@ -4,14 +4,20 @@ import {
     FlatList, Dimensions,
     TouchableOpacity
 } from 'react-native'
+import { connect } from 'react-redux'
+import { fecthData } from '../store/Actions/Api'
 import Icon from 'react-native-vector-icons/Entypo'
 
-export default class Home extends Component {
+class Home extends Component {
     static navigationOptions = (props) => {
         return {
             headerTitle: 'Trashure',
         }
     };
+
+    componentDidMount = () => {
+
+    }
     state = {
         data: [
             {
@@ -49,7 +55,7 @@ export default class Home extends Component {
                             style={{ flex: 1, width: deviceWidth * 0.95, borderBottomColor: 'black', marginTop: 20, minHeight: deviceHeight * 0.5, maxHeight: deviceHeight * 0.8 }}>
                             <View>
                                 <Text
-                                    style={{ fontWeight: 'bold', fontSize:20 }}>{item.user}</Text>
+                                    style={{ fontWeight: 'bold', fontSize: 20 }}>{item.user}</Text>
                             </View>
                             <View
                                 style={{ flexDirection: 'row' }}>
@@ -63,10 +69,10 @@ export default class Home extends Component {
                                 style={{ marginTop: 10 }}>
                                 <Text>{item.description}</Text>
                             </View>
-                                <View>
-                                    <Text
-                                        style={{color:'grey'}}>posted on {item.createdAt.toDateString()}</Text>
-                                </View>
+                            <View>
+                                <Text
+                                    style={{ color: 'grey' }}>posted on {item.createdAt.toDateString()}</Text>
+                            </View>
                         </View>}>
                 </FlatList>
             </View>
@@ -75,5 +81,16 @@ export default class Home extends Component {
 }
 
 
-const deviceWidth = Dimensions.get('window').width
-const deviceHeight = Dimensions.get('window').height
+
+const deviceWidth = Dimensions.get('window').width;
+const deviceHeight = Dimensions.get('window').height;
+
+const mapStateToProps = (state) => ({
+    loading: state.Api.loading
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    fetchData: () => dispatch(fetchData())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

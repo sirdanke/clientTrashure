@@ -12,8 +12,7 @@ import {
 import Icon from "react-native-vector-icons/FontAwesome"
 import FeatherIcon from "react-native-vector-icons/Feather"
 import { connect } from 'react-redux'
-
-import { UserLogin } from '../Actions/Api'
+import { UserLogin } from '../store/Actions/Api'
 
 class Login extends Component {
 
