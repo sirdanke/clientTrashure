@@ -39,7 +39,7 @@ class ExpoCameraScreen extends Component {
         if (this.camera) {
             console.log('Taking photo');
             const options = {
-                quality: 1, base64: true, fixOrientation: true,
+                quality: 0.1, base64: true, fixOrientation: true,
                 exif: true
             };
             let photo = await this.camera.takePictureAsync(options).then(photo => {
@@ -57,7 +57,7 @@ class ExpoCameraScreen extends Component {
                     //  return position
                      obj.longitude = position.coords.longitude
                      obj.latitude = position.coords.latitude
-                     console.log(obj.latitude, "===");
+                    //  console.log(obj.latitude, "===");
                      
                     this.props.sendRawData(obj)
                 },
@@ -98,6 +98,7 @@ class ExpoCameraScreen extends Component {
 
                             <TouchableOpacity
                                 style={{
+                                    marginLeft:deviceWidth*0.2,
                                     flex: 0.1,
                                     alignSelf: 'flex-end',
                                     alignItems: 'flex-start',
@@ -110,28 +111,21 @@ class ExpoCameraScreen extends Component {
                                             : Camera.Constants.Type.back,
                                     });
                                 }}>
-
                                 <MaterialIcon name="rotate-3d" color='white' size={24} />
-                                {/* <Text
-                                    style={{ fontSize: 18, marginBottom: 10, color: 'white' }}>
-                                    {' '}Flip{' '}
-                                </Text> */}
                             </TouchableOpacity>
+
                             <TouchableOpacity
                                 onPress={this.snapPhoto.bind(this)}
                                 style={{
-                                    // flex: 0.1,
                                     alignSelf: 'flex-end',
                                     alignItems: 'flex-start',
-                                    // width: deviceWidth*0.5
-                                }}
-                            >
+                                }}>
                                 <Icon name="camera" color='white' size={24} />
-                                {/* <Text
-                                    style={{ fontSize: 18, marginBottom: 10, color: 'white' }}>take picture</Text> */}
                             </TouchableOpacity>
+
                             <TouchableOpacity
                                 style={{
+                                    marginRight:deviceWidth*0.2,
                                     flex: 0.1,
                                     alignSelf: 'flex-end',
                                     alignItems: 'flex-start',
@@ -144,12 +138,7 @@ class ExpoCameraScreen extends Component {
                                             : Camera.Constants.FlashMode.torch
                                     });
                                 }}>
-
                                 <MaterialIcon name="flash" color='white' size={24} />
-                                {/* <Text
-                                    style={{ fontSize: 18, marginBottom: 10, color: 'white' }}>
-                                    {' '}Flip{' '}
-                                </Text> */}
                             </TouchableOpacity>
 
                         </View>
