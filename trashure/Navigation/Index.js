@@ -51,16 +51,7 @@ const PictureNav = createStackNavigator({
 })
 
 const HomeRoute = createBottomTabNavigator({
-    // Login: {
-    //     screen: LoginStackNav,
-    //     navigationOptions: {
-    //         showLabel : false,
-    //         showIcon : false,
-    //         tabBarVisible : false,
-    //         // tabBarIcon: ({focused}) => (horizontal= {focused}),
-    //         header: null
-    //     }
-    // },
+
     Home: {
         screen: HomeNav,
         navigationOptions: {
@@ -77,7 +68,7 @@ const HomeRoute = createBottomTabNavigator({
         }
     }
 }, {
-        initialRouteName: 'Camera',
+        initialRouteName: 'Home',
         tabBarOptions: {
             activeTintColor: 'skyblue',
             inactiveTintColor: 'grey',
